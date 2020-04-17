@@ -1,0 +1,101 @@
+from tkinter import *
+root = Tk()
+
+Turnover = Entry(root, width=50, borderwidth=5)
+Turnover.grid(row=0, column=0)
+Turnover.insert(0, "Turnover")
+
+CostOfGoods = Entry(root, width=50, borderwidth=5)
+CostOfGoods.grid(row=1, column=0)
+CostOfGoods.insert(0, "Cost Of Goods")
+
+Wages = Entry(root, width=50, borderwidth=5)
+Wages.grid(row=2, column=0)
+Wages.insert(0, "Wages")
+
+Stationary = Entry(root, width=50, borderwidth=5)
+Stationary.grid(row=3, column=0)
+Stationary.insert(0, "Stationary")
+
+Fual = Entry(root, width=50, borderwidth=5)
+Fual.grid(row=4, column=0)
+Fual.insert(0, "Fual")
+
+Advertising = Entry(root, width=50, borderwidth=5)
+Advertising.grid(row=5, column=0)
+Advertising.insert(0, "Advertising")
+
+InterestIncome = Entry(root, width=50, borderwidth=5)
+InterestIncome.grid(row=6, column=0)
+InterestIncome.insert(0, "Interest Income")
+
+
+def myClick():
+    T = int(Turnover.get())
+    CoS = int(CostOfGoods.get())
+    Gp = T - CoS
+    W = int(Wages.get())
+    S = int(Stationary.get())
+    F = int(Fual.get())
+    A = int(Advertising.get())
+    Expenses = W + S + F + A
+    NetProfitBefore = Gp - Expenses
+    Ii = int(InterestIncome.get())
+    NpPlusInt = NetProfitBefore + Ii
+    Tax = round(NpPlusInt * 0.28, 2)
+    NetProfit = round(NpPlusInt - Tax, 2)
+    myLabel1 = Label(root, text='Turnover')
+    myLabel1.grid(row=8, column=0)
+    myLabel2 = Label(root, text='Cost Of Goods')
+    myLabel2.grid(row=9, column=0)
+    myLabel3 = Label(root, text='Gross Profit')
+    myLabel3.grid(row=10, column=0)
+    myLabel4 = Label(root, text='Expenses')
+    myLabel4.grid(row=11, column=0)
+    myLabel5 = Label(root, text='Wages')
+    myLabel5.grid(row=12, column=0)
+    myLabel6 = Label(root, text='Stationary')
+    myLabel6.grid(row=13, column=0)
+    myLabel7 = Label(root, text='Fual')
+    myLabel7.grid(row=14, column=0)
+    myLabel8 = Label(root, text='Advertising')
+    myLabel8.grid(row=15, column=0)
+    myLabel9 = Label(root, text='Net Profit Before')
+    myLabel9.grid(row=16, column=0)
+    myLabel10 = Label(root, text='Interest Income')
+    myLabel10.grid(row=17, column=0)
+    myLabel11 = Label(root, text='Tax')
+    myLabel11.grid(row=18, column=0)
+    myLabel12 = Label(root, text='Net Profit')
+    myLabel12.grid(row=19, column=0)
+
+    myLabel21 = Label(root, text=T)
+    myLabel21.grid(row=8, column=1)
+    myLabel22 = Label(root, text=CoS)
+    myLabel22.grid(row=9, column=1)
+    myLabel23 = Label(root, text=Gp)
+    myLabel23.grid(row=10, column=1)
+    myLabel24 = Label(root, text=Expenses)
+    myLabel24.grid(row=11, column=1)
+    myLabel25 = Label(root, text=W)
+    myLabel25.grid(row=12, column=1)
+    myLabel26 = Label(root, text=S)
+    myLabel26.grid(row=13, column=1)
+    myLabel27 = Label(root, text=F)
+    myLabel27.grid(row=14, column=1)
+    myLabel28 = Label(root, text=A)
+    myLabel28.grid(row=15, column=1)
+    myLabel29 = Label(root, text=NetProfitBefore)
+    myLabel29.grid(row=16, column=1)
+    myLabel30 = Label(root, text=Ii)
+    myLabel30.grid(row=17, column=1)
+    myLabel31 = Label(root, text=Tax)
+    myLabel31.grid(row=18, column=1)
+    myLabel32 = Label(root, text=NetProfit)
+    myLabel32.grid(row=19, column=1)
+
+myButton = Button(root, text="Enter data", padx= 5, pady=5, command=myClick)
+myButton.grid(row=7, column=0)
+
+
+root.mainloop()
