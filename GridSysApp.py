@@ -12,10 +12,9 @@ NetProfitBefore = GrossProfit - Expenses
 InterestIncome = 1200
 Tax = round((NetProfitBefore + InterestIncome) * 0.28, 2)
 NetProfit = round((NetProfitBefore + InterestIncome) - Tax, 2)
-myLabel2 = Label(root, text="Tax")
 
 #Create a label Widget
-myLabel1 = Label(root, text="Turnover")
+myLabel1 = Label(root, text="Turnover").grid(row=0, column=0)
 myLabel2 = Label(root, text="Cost of goods")
 myLabel3 = Label(root, text="Gross Profit")
 myLabel4 = Label(root, text="Expenses")
@@ -41,7 +40,7 @@ myLabel30 = Label(root, text=f"{InterestIncome}")
 myLabel31 = Label(root, text=f"{Tax}")
 myLabel32 = Label(root, text=f"{NetProfit}")
 #Shoving it into the screen
-myLabel1.grid(row=0, column=0)
+#myLabel1
 myLabel2.grid(row=1, column=0)
 myLabel3.grid(row=2, column=0)
 myLabel4.grid(row=3, column=0)
